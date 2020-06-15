@@ -2,99 +2,147 @@
 <html lang="es">
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
         <title>Registro enero 2020</title>
+        <link rel="stylesheet" href="styles/styles.css">
     </head>
 
     <body>
+        <nav class="fixed-top navbar navbar-expand-lg">
+            <div class="navbar-collapse">
+                <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+                    <a class="nav-link header" href="https://www.ipn.mx/">
+                        <img src="figures/ipn.png"  width="60" height="40" class="d-inline-block align-top" alt="ipn">
+                        Instituto Politécnico Nacional
+                    </a>
+                </div>
+                <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+                    <a class="nav-link header" href="https://www.escom.ipn.mx/">
+                        Escuela Superior de Cómputo
+                        <img src="figures/escom.png"  width="60" height="40" class="d-inline-block align-top" alt="escom">
+                    </a>
+                </div>
+            </div>
+        </nav>  
         <main>
-            <form action="#" target="_parent">
-                <fieldset id="identidad">
-                    <legend>Identidad</legend>
-                        <label for="name">Nombre:</label>
-                        <input type="text" id="nombre" name="nombre" required>
-                        <label for="ap-paterno">Apellido paterno: </label>
-                        <input type="text" id="ap-paterno" name="ap-paterno" required>
-                        <label for="ap-materno">Apellido materno: </label>
-                        <input type="tetx" id="ap-materno" name="ap-materno" required>
-                        <label for="fech-nac">Fecha de nacimiento: </label>
-                        <input type="date" id="fech-nac" name="fech-nac" required>
-                        <label for="curp" required>CURP</label>
-                        <input type="text" id="curp" name="curp">
-                        <label for="entidad">Entidad de nacimiento:</label>
-                        <select name="entidad" required>
-                            <option value="Aguascalientes">Aguascalientes</option>
-                            <option value="Baja California">Baja California</option>
-                            <option value="Baja California Sur">Baja California Sur</option>
-                            <option value="Campeche">Campeche</option>
-                            <option value="Chiapas">Chiapas</option>
-                            <option value="Chihuahua">Chihuahua</option>
-                            <option value="Coahuila">Coahuila</option>
-                            <option value="Colima">Colima</option>
-                            <option value="Distrito Federal">Distrito Federal</option>
-                            <option value="Durango">Durango</option>
-                            <option value="Estado de México">Estado de México</option>
-                            <option value="Guanajuato">Guanajuato</option>
-                            <option value="Guerrero">Guerrero</option>
-                            <option value="Hidalgo">Hidalgo</option>
-                            <option value="Jalisco">Jalisco</option>
-                            <option value="Michoacán">Michoacán</option>
-                            <option value="Morelos">Morelos</option>
-                            <option value="Nayarit">Nayarit</option>
-                            <option value="Nuevo León">Nuevo León</option>
-                            <option value="Oaxaca">Oaxaca</option>
-                            <option value="Puebla">Puebla</option>
-                            <option value="Querétaro">Querétaro</option>
-                            <option value="Quintana Roo">Quintana Roo</option>
-                            <option value="San Luis Potosí">San Luis Potosí</option>
-                            <option value="Sinaloa">Sinaloa</option>
-                            <option value="Sonora">Sonora</option>
-                            <option value="Tabasco">Tabasco</option>
-                            <option value="Tamaulipas">Tamaulipas</option>
-                            <option value="Tlaxcala">Tlaxcala</option>
-                            <option value="Veracruz">Veracruz</option>
-                            <option value="Yucatán">Yucatán</option>
-                            <option value="Zacatecas">Zacatecas</option>
-                     </select>
-                </fieldset>
-                <br>
-                <fieldset id="contacto">
-                    <legend>Datos de contacto<legend>
-                        <label for="mail">Correo electrónico: </label>
-                        <input type="email" id="mail" name="mail" required>
-                        <label for="telefono" required>Número telefónico: </label>
-                        <input type="text" id="telefono" name="telefono" required>
-                        <label for="cel">Celular</label>
-                        <input type="text" id="cel" name="cel" required>
-                </fieldset>
-                <br>
-                <fieldset id="Procedencia">
-                    <legend>Procedencia</legend>
-                        <label for="esc-proc">Escuela de procedencia:</label>
-                        <select name="esc-proc" id="esc-proc" required>
-                            <option value="cecyt1">CECyT 1</option>
-                            <option value="cecyt2">CECyT 2</option>
-                            <option value="cecyt3">CECyT 3</option>
-                            <option value="cecyt4">CECyT 4</option>
-                            <option value="cecyt5">CECyT 5</option>
-                            <option value="cecyt6">CECyT 6</option>
-                            <option value="cecyt7">CECyT 7</option>
-                            <option value="cecyt8">CECyT 8</option>
-                            <option value="cecyt9">CECyT 9</option>
-                            <option value="cecyt10">CECyT 10</option>
-                            <option value="cecyt11">CECyT 11</option>
-                            <option value="cecyt12">CECyT 12</option>
-                            <option value="cecyt13">CECyT 13</option>
-                            <option value="cecyt14">CECyT 14</option>
-                            <option value="cecyt15">CECyT 15</option>
-                            <option value="cecyt16">CECyT 16</option>
-                            <option value="cecyt17">Otra</option>
-                        </select>
-                        <label for="prom">Promedio</label>
-                        <input type="text" name="prom" id="prom">
-                </fieldset>
-                <input type="submit" value="Enviar">
-                <input type="reset" value="Limpiar">
-            </form>
+            <h1 class="text-center">Formulario para alumnos de nuevo ingreso</h1>
+            <div class="container">
+                <form action="#" target="_parent">
+                    <fieldset id="identidad" class="form-group">
+                        <legend class="text-center title">Identidad</legend>
+                        <div class="form-group">
+                            <label for="nombre">Nombre:</label>
+                            <input type="text" id="nombre" name="nombre" placeholder="Introduce nombre" class="form-control" required>
+                            <label for="ap-paterno">Apellido paterno: </label>
+                            <input type="text" id="ap-paterno" name="ap-paterno" placeholder="Apellido paterno" class="form-control" required>
+                            <label for="ap-materno">Apellido materno: </label>
+                            <input type="tetx" id="ap-materno" name="ap-materno" placeholder="Apellido materno" class="form-control" required>
+                            <label for="boleta">Número de boleta: </label>
+                            <input type="text" id="boleta" name="boleta" placeholder="Puede ser PPXXXXXXX, PMXXXXXX o 10 dígitos" class="form-control" required>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <label for="fech-nac">Fecha de nacimiento: </label>
+                                <input type="date" id="fech-nac" name="fech-nac" class="form-control" required>
+                            </div>
+                            <div class="col">
+                                <label for="curp" required>CURP:</label>
+                                <input type="text" id="curp" name="curp" class="form-control" placeholder="CURP">
+                            </div>
+                            <div class="col">
+                                <label for="entidad">Entidad de nacimiento:</label>
+                                <select name="entidad" class="form-control" required>
+                                    <option value="Aguascalientes">Aguascalientes</option>
+                                    <option value="Baja California">Baja California</option>
+                                    <option value="Baja California Sur">Baja California Sur</option>
+                                    <option value="Campeche">Campeche</option>
+                                    <option value="Chiapas">Chiapas</option>
+                                    <option value="Chihuahua">Chihuahua</option>
+                                    <option value="Coahuila">Coahuila</option>
+                                    <option value="Colima">Colima</option>
+                                    <option value="Distrito Federal">Distrito Federal</option>
+                                    <option value="Durango">Durango</option>
+                                    <option value="Estado de México">Estado de México</option>
+                                    <option value="Guanajuato">Guanajuato</option>
+                                    <option value="Guerrero">Guerrero</option>
+                                    <option value="Hidalgo">Hidalgo</option>
+                                    <option value="Jalisco">Jalisco</option>
+                                    <option value="Michoacán">Michoacán</option>
+                                    <option value="Morelos">Morelos</option>
+                                    <option value="Nayarit">Nayarit</option>
+                                    <option value="Nuevo León">Nuevo León</option>
+                                    <option value="Oaxaca">Oaxaca</option>
+                                    <option value="Puebla">Puebla</option>
+                                    <option value="Querétaro">Querétaro</option>
+                                    <option value="Quintana Roo">Quintana Roo</option>
+                                    <option value="San Luis Potosí">San Luis Potosí</option>
+                                    <option value="Sinaloa">Sinaloa</option>
+                                    <option value="Sonora">Sonora</option>
+                                    <option value="Tabasco">Tabasco</option>
+                                    <option value="Tamaulipas">Tamaulipas</option>
+                                    <option value="Tlaxcala">Tlaxcala</option>
+                                    <option value="Veracruz">Veracruz</option>
+                                    <option value="Yucatán">Yucatán</option>
+                                    <option value="Zacatecas">Zacatecas</option>
+                                </select>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <br>
+                    <fieldset id="contacto" class="form-group">
+                        <legend class="text-center title">Datos de contacto</legend>
+                        <div class="row">
+                            <div class="col">
+                                <label for="mail">Correo electrónico: </label>
+                                <input type="email" id="mail" name="mail" placeholder="ejemplo@dominio.com" class="form-control" required>
+                            </div>
+                            <div class="col">
+                                <label for="telefono" required>Número telefónico: </label>
+                                <input type="text" id="telefono" name="telefono" class="form-control" placeholder="Número telefónico" required>
+                            </div>
+                            <div class="col">
+                                <label for="cel">Celular: </label>
+                                <input type="text" id="cel" name="cel" required class="form-control" placeholder="Celular">
+                            </div>
+                        </div>
+                    </fieldset>
+                    <br>
+                    <fieldset id="Procedencia" class="form-group">
+                        <legend class="text-center title">Procedencia</legend>
+                            <div class="row">
+                                <div class="col">
+                                    <label for="esc-proc">Escuela de procedencia:</label>
+                                    <select name="esc-proc" id="esc-proc" class="form-control" required>
+                                        <option value="cecyt1">CECyT 1</option>
+                                        <option value="cecyt2">CECyT 2</option>
+                                        <option value="cecyt3">CECyT 3</option>
+                                        <option value="cecyt4">CECyT 4</option>
+                                        <option value="cecyt5">CECyT 5</option>
+                                        <option value="cecyt6">CECyT 6</option>
+                                        <option value="cecyt7">CECyT 7</option>
+                                        <option value="cecyt8">CECyT 8</option>
+                                        <option value="cecyt9">CECyT 9</option>
+                                        <option value="cecyt10">CECyT 10</option>
+                                        <option value="cecyt11">CECyT 11</option>
+                                        <option value="cecyt12">CECyT 12</option>
+                                        <option value="cecyt13">CECyT 13</option>
+                                        <option value="cecyt14">CECyT 14</option>
+                                        <option value="cecyt15">CECyT 15</option>
+                                        <option value="cecyt16">CECyT 16</option>
+                                        <option value="cecyt17">Otra</option>
+                                    </select>
+                                </div>
+                                <div class="col">
+                                    <label for="prom">Promedio</label>
+                                    <input type="text" name="prom" id="prom" placeholder="Con número decimal hasta dos dígitos" class="form-control" required>
+                                </div>
+                            </div>
+                    </fieldset>
+                    <input type="submit" value="Enviar">
+                    <input type="reset" value="Limpiar">
+                </form>
+            </div>
         </main>
     </body>
 </html>
