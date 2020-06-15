@@ -1,9 +1,10 @@
 body{
+    background-color: #f2f3f4 ;
     padding: 80px;
 }
 .title{
     font-size: 30px;
-    color: #0000FF;
+    color: #0000ff;
 }
 .header{
     font-size: 20px;
