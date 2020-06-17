@@ -57,6 +57,7 @@ function reset(){
 
 function validar(){
 	reset();
+	//console.log('validando');
 	var valido = true;
 	if(nombre.value === ''){
 		nombre.classList.add('is-invalid');
@@ -122,6 +123,12 @@ function validar(){
 		curp.classList.add('is-invalid');
 		document.getElementById('invalid_curp').style.display = 'block';
 		document.getElementById('invalid_curp').getElementsByTagName('p')[0].innerHTML = 'Ingresa tu CURP';
+		valid = false;
+	}
+	else if(!validarCurp(curp.value)){
+		curp.classList.add('is-invalid');
+		document.getElementById('invalid_curp').style.display = 'block';
+		document.getElementById('invalid_curp').getElementsByTagName('p')[0].innerHTML = 'Ingresa un CURP válida';
 		valid = false;
 	}
 	else{
@@ -244,6 +251,7 @@ function validar(){
 	else{
 		promedio.classList.add('is-valid');
 	}
+
 	return valid;
 }
 
@@ -296,4 +304,13 @@ function validarPromedio(promedio){
 	if(num < 0 || num > 10) return false;
 //	console.log(/^[0-9]+(\.[0-9]{1,2})?$/.test(promedio));
 	return /^[0-9]+(\.[0-9]{1,2})?$/.test(promedio);
+}
+
+function validarCurp(curp){
+	console.log(curp.length);
+	if(curp.length != 18) return false;
+	if(hasNumber(curp.substr(0,4))) return false;
+	if(isNaN(curp.substr(4,6))) return false;
+	if(hasNumber(curp.substr(10,6))) return false;
+	return true;
 }
