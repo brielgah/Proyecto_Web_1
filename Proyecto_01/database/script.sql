@@ -4,6 +4,7 @@ use usuarios;
 create table usuario(
 	user varchar(18) not null,
 	passwd varchar(10) not null,
+	admin boolean,
 	primary key(user,passwd)
 );
 use alumnos;
