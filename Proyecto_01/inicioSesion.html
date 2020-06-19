@@ -1,16 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
-	<meta charset="utf-8">
+	<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+		<title>Inicia Sesión</title>
+		<link href="inicioSesion.css" rel="stylesheet">
+    </head>
 </head>
-<body>
-	<form name="inicioSesion" method="post" action="./inicioSesion.php" target="_self">
-		Ingresa tu usuario
-		<input name="user" type="text" id="user">
-		Ingresa tu contraseña
-		<input name="password" type="text" id="password">
-		<input type="submit" name="Ingresar" value="Iniciar Sesion">
-	</form>
+<body class="text-center">
+	<main class="container">
+		<form name="inicioSesion" method="post" action="./inicioSesion.php" target="_self" class="form-signin">
+			<div class="card bg-light mx-2 my-2 px-2 py-2">
+			<div class="card-header"><img class="mb-4" src="./figures/escom.png" alt="escom" width="122" height="96"></div>
+				<h1 class="h3 mb-3 font-weight-normal">Inicia sesión </h1>
+				<fieldset class="form-container">
+					<label for="user" class="sr-only">Ingresa tu usuario</label>
+					<input name="user" type="text" id="user" placeholder="Usuario" class="form-control" required autofocus>
+					<small id="curp-help" class="form-text text-muted">Recuerda que tu usuario es tu CURP (lo puedes consultar <a href="https://www.gob.mx/curp/" class="" target="_blank">aquí</a>).</small>
+					<label for="password" class="sr-only">Ingresa tu contraseña</label>
+					<input name="password" type="text" id="password" placeholder="Contraseña" class="form-control">
+					<small id="curp-help" class="form-text text-muted">Tu contraseña es tu boleta.</small>
+					<br>
+					<input type="submit" name="Ingresar" value="Iniciar Sesion" class="btn btn-primary btn-block">
+				</fieldset>
+			</div>
+		</form>
+	</main>
 </body>
 </html>
