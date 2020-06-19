@@ -12,8 +12,10 @@ var fecha = document.getElementById('fech-nac');
 var direccion = document.getElementById('direccion');
 var municipio = document.getElementById('municipio');
 var codigo_postal = document.getElementById('codigo_postal');
+var escuela = document.getElementById('esc-proc');
+var entidad = document.getElementById('entidad');
 
-function reset(){
+function resetStyles(){
 	nombre.classList.remove('is-valid');
 	nombre.classList.remove('is-invalid');
 	document.getElementById('invalid_nombre').style.display = 'none';
@@ -56,7 +58,7 @@ function reset(){
 }
 
 function validar(){
-	reset();
+	resetStyles();
 	//console.log('validando');
 	var valido = true;
 	if(nombre.value === ''){
@@ -251,8 +253,25 @@ function validar(){
 	else{
 		promedio.classList.add('is-valid');
 	}
-
+	rellenarDatos();
 	return valid;
+}
+
+function rellenarDatos(){
+	console.log('rellenando...');
+	document.getElementById('tabla_nombre').innerHTML = nombre.value;
+	document.getElementById('tabla_ap_paterno').innerHTML = ap_paterno.value;
+	document.getElementById('tabla_ap_materno').innerHTML = ap_materno.value;
+	document.getElementById('tabla_boleta').innerHTML = boleta.value;
+	document.getElementById('tabla_fec_nac').innerHTML = fecha.value;
+	document.getElementById('tabla_curp').innerHTML = curp.value;
+	document.getElementById('tabla_entidad').innerHTML = entidad.value;
+	document.getElementById('tabla_email').innerHTML = email.value;
+	document.getElementById('tabla_telefono').innerHTML = telefono.value;
+	document.getElementById('tabla_celular').innerHTML = celular.value;
+	document.getElementById('tabla_direccion').innerHTML = direccion.value + ' ' + entidad.value + ' CP. ' + codigo_postal.value;
+	document.getElementById('tabla_escuela').innerHTML = escuela.value;
+	document.getElementById('tabla_promedio').innerHTML = promedio.value;
 }
 
 function validarFecha(fecha){
