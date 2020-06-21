@@ -8,8 +8,8 @@ if(!$con){
 				</script>";
 }
 else{
-    $result=my_sqli_query($con, "SELECT boleta, nombre,  FROM alumnos");
-    while($row = my_sqli_fetch_array($result)){
+    $result=mysqli_query($con, "SELECT boleta, nombre,  FROM alumnos");
+    while($row = mysqli_fetch_array($result)){
         echo "<tr>";
         echo "<td>".$row['boleta']."</td>";
         echo "<td>".$row['nombre']."</td>";
@@ -20,5 +20,5 @@ else{
         echo "</tr>";
     }
 }
-my_sqli_close($con);
+mysqli_close($con);
 ?>
