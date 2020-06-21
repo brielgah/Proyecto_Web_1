@@ -14,6 +14,7 @@ var municipio = document.getElementById('municipio');
 var codigo_postal = document.getElementById('codigo_postal');
 var escuela = document.getElementById('esc-proc');
 var entidad = document.getElementById('entidad');
+var otraEscuela = document.getElementById('otra-esc');
 
 function resetStyles(){
 	nombre.classList.remove('is-valid');
@@ -55,6 +56,10 @@ function resetStyles(){
 	promedio.classList.remove('is-valid');
 	promedio.classList.remove('is-invalid');
 	document.getElementById('invalid_promedio').style.display = 'none';
+	otraEscuela.classList.remove('is-valid');
+	otraEscuela.classList.remove('is-invalid');
+	document.getElementById('invalid_otra_esc').style.display = 'none';
+	document.getElementById('modal_invalid').style.display = 'none';
 }
 
 function validar(){
@@ -110,13 +115,13 @@ function validar(){
 		boleta.classList.add('is-invalid');
 		document.getElementById('invalid_boleta').style.display = 'block';
 		document.getElementById('invalid_boleta').getElementsByTagName('p')[0].innerHTML = 'Ingresa tu número de boleta';
-		valid = false;
+		valido = false;
 	}
 	else if(!validarBoleta(boleta.value)){
 		boleta.classList.add('is-invalid');
 		document.getElementById('invalid_boleta').style.display = 'block';
 		document.getElementById('invalid_boleta').getElementsByTagName('p')[0].innerHTML = 'La boleta no es válida';
-		valid = false;
+		valido = false;
 	}
 	else{
 		boleta.classList.add('is-valid');
@@ -125,13 +130,13 @@ function validar(){
 		curp.classList.add('is-invalid');
 		document.getElementById('invalid_curp').style.display = 'block';
 		document.getElementById('invalid_curp').getElementsByTagName('p')[0].innerHTML = 'Ingresa tu CURP';
-		valid = false;
+		valido = false;
 	}
 	else if(!validarCurp(curp.value)){
 		curp.classList.add('is-invalid');
 		document.getElementById('invalid_curp').style.display = 'block';
 		document.getElementById('invalid_curp').getElementsByTagName('p')[0].innerHTML = 'Ingresa un CURP válida';
-		valid = false;
+		valido = false;
 	}
 	else{
 		curp.classList.add('is-valid');
@@ -140,13 +145,13 @@ function validar(){
 		fecha.classList.add('is-invalid');
 		document.getElementById('invalid_fecha').style.display = 'block';
 		document.getElementById('invalid_fecha').getElementsByTagName('p')[0].innerHTML = 'Ingresa tu fecha de nacimiento';
-		valid = false;
+		valido = false;
 	}
 	else if(!validarFecha(fecha.value)){
 		fecha.classList.add('is-invalid');
 		document.getElementById('invalid_fecha').style.display = 'block';
 		document.getElementById('invalid_fecha').getElementsByTagName('p')[0].innerHTML = 'Ingresa una fecha de nacimiento válida';
-		valid = false;
+		valido = false;
 	
 	}
 	else{
@@ -156,14 +161,14 @@ function validar(){
 		email.classList.add('is-invalid');
 		document.getElementById('invalid_email').style.display = 'block';
 		document.getElementById('invalid_email').getElementsByTagName('p')[0].innerHTML = 'Ingresa tu correo electrónico';
-		valid = false;
+		valido = false;
 		
 	}
 	else if(!validarEmail(email.value)){
 		email.classList.add('is-invalid');
 		document.getElementById('invalid_email').style.display = 'block';
 		document.getElementById('invalid_email').getElementsByTagName('p')[0].innerHTML = 'Ingresa un correo electrónico válido';
-		valid = false;
+		valido = false;
 	}
 	else{
 		email.classList.add('is-valid');
@@ -172,14 +177,14 @@ function validar(){
 		telefono.classList.add('is-invalid');
 		document.getElementById('invalid_telefono').style.display = 'block';
 		document.getElementById('invalid_telefono').getElementsByTagName('p')[0].innerHTML = 'Ingresa tu número telefónico';
-		valid = false;
+		valido = false;
 		
 	}
 	else if(telefono.value.length != 10 || isNaN(telefono.value)){
 		telefono.classList.add('is-invalid');
 		document.getElementById('invalid_telefono').style.display = 'block';
 		document.getElementById('invalid_telefono').getElementsByTagName('p')[0].innerHTML = 'Ingresa un número telefónico válido, no utilices guiones o espacios';
-		valid = false;
+		valido = false;
 	}
 	else{
 		telefono.classList.add('is-valid');
@@ -188,14 +193,14 @@ function validar(){
 		celular.classList.add('is-invalid');
 		document.getElementById('invalid_celular').style.display = 'block';
 		document.getElementById('invalid_celular').getElementsByTagName('p')[0].innerHTML = 'Ingresa tu número de celular';
-		valid = false;
+		valido = false;
 		
 	}
 	else if(celular.value.length != 10 || isNaN(celular.value)){
 		celular.classList.add('is-invalid');
 		document.getElementById('invalid_celular').style.display = 'block';
 		document.getElementById('invalid_celular').getElementsByTagName('p')[0].innerHTML = 'Ingresa un número de celular válido, no utilices guiones o espacios';
-		valid = false;
+		valido = false;
 	}
 	else{
 		celular.classList.add('is-valid');
@@ -204,7 +209,7 @@ function validar(){
 		direccion.classList.add('is-invalid');
 		document.getElementById('invalid_direccion').style.display = 'block';
 		document.getElementById('invalid_direccion').getElementsByTagName('p')[0].innerHTML = 'Ingresa tu dirección';
-		valid = false;
+		valido = false;
 	
 	}
 	else{
@@ -214,7 +219,7 @@ function validar(){
 		municipio.classList.add('is-invalid');
 		document.getElementById('invalid_municipio').style.display = 'block';
 		document.getElementById('invalid_municipio').getElementsByTagName('p')[0].innerHTML = 'Ingresa tu municipio o delegación';
-		valid = false;
+		valido = false;
 	
 	}
 	else{
@@ -224,14 +229,14 @@ function validar(){
 		codigo_postal.classList.add('is-invalid');
 		document.getElementById('invalid_codigo_postal').style.display = 'block';
 		document.getElementById('invalid_codigo_postal').getElementsByTagName('p')[0].innerHTML = 'Ingresa tu código postal';
-		valid = false;
+		valido = false;
 		
 	}
 	else if(isNaN(codigo_postal.value)){
 		codigo_postal.classList.add('is-invalid');
 		document.getElementById('invalid_codigo_postal').style.display = 'block';
 		document.getElementById('invalid_codigo_postal').getElementsByTagName('p')[0].innerHTML = 'Ingresa un código postal válido';
-		valid = false;
+		valido = false;
 	}
 	else{
 		codigo_postal.classList.add('is-valid');
@@ -240,25 +245,36 @@ function validar(){
 		promedio.classList.add('is-invalid');
 		document.getElementById('invalid_promedio').style.display = 'block';
 		document.getElementById('invalid_promedio').getElementsByTagName('p')[0].innerHTML = 'Ingresa tu promedio, solo 2 decimales';
-		valid = false;
+		valido = false;
 	
 	}
 	else if(!validarPromedio(promedio.value)){
 		promedio.classList.add('is-invalid');
 		document.getElementById('invalid_promedio').style.display = 'block';
 		document.getElementById('invalid_promedio').getElementsByTagName('p')[0].innerHTML = 'Ingresa un promedio válido, solo 2 decimales';
-		valid = false;
+		valido = false;
 	
 	}
 	else{
 		promedio.classList.add('is-valid');
 	}
+	if(escuela.value === 'otra'){
+		if(otraEscuela.value === ''){
+			otraEscuela.classList.add('is-invalid');
+			document.getElementById('invalid_otra_esc').style.display = 'block';
+			document.getElementById('invalid_otra_esc').getElementsByTagName('p')[0].innerHTML = 'Ingresa el nombre de tu escuela';
+			valido = false;
+		}
+		else{
+			otraEscuela.classList.add('is-valid');
+		}
+	}
 	rellenarDatos();
-	return valid;
+	return valido;
 }
 
-function rellenarDatos(){
-	console.log('rellenando...');
+function rellenarDatos(valido){
+//	console.log('rellenando...');
 	document.getElementById('tabla_nombre').innerHTML = nombre.value;
 	document.getElementById('tabla_ap_paterno').innerHTML = ap_paterno.value;
 	document.getElementById('tabla_ap_materno').innerHTML = ap_materno.value;
@@ -270,7 +286,12 @@ function rellenarDatos(){
 	document.getElementById('tabla_telefono').innerHTML = telefono.value;
 	document.getElementById('tabla_celular').innerHTML = celular.value;
 	document.getElementById('tabla_direccion').innerHTML = direccion.value + ' ' + entidad.value + ' CP. ' + codigo_postal.value;
-	document.getElementById('tabla_escuela').innerHTML = escuela.value;
+	if(escuela.value === 'otra'){
+		document.getElementById('tabla_escuela').innerHTML = otraEscuela.value;
+	}
+	else{
+		document.getElementById('tabla_escuela').innerHTML = escuela.value;
+	}
 	document.getElementById('tabla_promedio').innerHTML = promedio.value;
 }
 

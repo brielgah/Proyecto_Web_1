@@ -201,9 +201,14 @@
                                                 <option value="cecyt14">CECyT 14</option>
                                                 <option value="cecyt15">CECyT 15</option>
                                                 <option value="cecyt16">CECyT 16</option>
-                                                <option value="cecyt17">Otra</option>
+                                                <option value="otra">Otra</option>
                                             </select>
                                         </div>
+					<div class="col" id="otra-esc-div" style="display: none;">
+                                            <label for="otra-esc">Escuela: </label>
+                                            <input type="text" name="otra-esc" id="otra-esc" placeholder="Ingresa el nombre de tu escuela" class="form-control">
+					    <div id="invalid_otra_esc" class="invalid-feedback"><p></p></div>
+					</div>
                                         <div class="col">
                                             <label for="prom">Promedio</label>
                                             <input type="text" name="prom" id="prom" placeholder="Con número decimal hasta dos dígitos" class="form-control" required>
@@ -237,28 +242,29 @@
                                     </button>
                                 </div>
                                 <div class="modal-body">
+				    <div id="modal_invalid" class="alert alert-danger" role="alert" style="display: none;">Algunos datos son incorrectos, modifícalos</div>
                                     <p>Hola, verifica que los datos que ingresaste sean correctos</p>
                                     <div class="card">
 										<ul class="list-group list-group-flush" id="datos_alumno">
-										    <li class="list-group-item"><div class="container"><div class="row justify-content-between bx-1"><p>Nombre</p><p id="tabla_nombre">Daniel</p></div></div></li>
-										    <li class="list-group-item"><div class="container"><div class="row justify-content-between bx-1"><p>Apellido paterno</p><p id="tabla_ap_paterno">Daniel</p></div></div></li>
-										    <li class="list-group-item"><div class="container"><div class="row justify-content-between bx-1"><p>Apellido materno</p><p id="tabla_ap_materno">Daniel</p></div></div></li>
-										    <li class="list-group-item"><div class="container"><div class="row justify-content-between bx-1"><p>Boleta</p><p id="tabla_boleta">Daniel</p></div></div></li>
-										    <li class="list-group-item"><div class="container"><div class="row justify-content-between bx-1"><p>Fecha de nacimiento</p><p id="tabla_fec_nac">Daniel</p></div></div></li>
-										    <li class="list-group-item"><div class="container"><div class="row justify-content-between bx-1"><p>CURP</p><p id="tabla_curp">Daniel</p></div></div></li>
-										    <li class="list-group-item"><div class="container"><div class="row justify-content-between bx-1"><p>Entidad de nacimiento</p><p id="tabla_entidad">Daniel</p></div></div></li>
-										    <li class="list-group-item"><div class="container"><div class="row justify-content-between bx-1"><p>Correo electrónico</p><p id="tabla_email">Daniel</p></div></div></li>
-										    <li class="list-group-item"><div class="container"><div class="row justify-content-between bx-1"><p>Número telefónico</p><p id="tabla_telefono">Daniel</p></div></div></li>
-										    <li class="list-group-item"><div class="container"><div class="row justify-content-between bx-1"><p>Celular</p><p id="tabla_celular">Daniel</p></div></div></li>
-    										<li class="list-group-item"><div class="container"><div class="row justify-content-between bx-1"><p>Dirección</p><p id="tabla_direccion">Daniel</p></div></div></li>
-    										<li class="list-group-item"><div class="container"><div class="row justify-content-between bx-1"><p>Escuela de procedencia</p><p id="tabla_escuela">Daniel</p></div></div></li>
-    										<li class="list-group-item"><div class="container"><div class="row justify-content-between bx-1"><p>Promedio</p><p id="tabla_promedio">Daniel</p></div></div></li>
+										    <li class="list-group-item"><div class="container"><div class="row justify-content-between bx-1"><p>Nombre</p><p id="tabla_nombre"></p></div></div></li>
+										    <li class="list-group-item"><div class="container"><div class="row justify-content-between bx-1"><p>Apellido paterno</p><p id="tabla_ap_paterno"></p></div></div></li>
+										    <li class="list-group-item"><div class="container"><div class="row justify-content-between bx-1"><p>Apellido materno</p><p id="tabla_ap_materno"></p></div></div></li>
+										    <li class="list-group-item"><div class="container"><div class="row justify-content-between bx-1"><p>Boleta</p><p id="tabla_boleta"></p></div></div></li>
+										    <li class="list-group-item"><div class="container"><div class="row justify-content-between bx-1"><p>Fecha de nacimiento</p><p id="tabla_fec_nac"></p></div></div></li>
+										    <li class="list-group-item"><div class="container"><div class="row justify-content-between bx-1"><p>CURP</p><p id="tabla_curp"></p></div></div></li>
+										    <li class="list-group-item"><div class="container"><div class="row justify-content-between bx-1"><p>Entidad de nacimiento</p><p id="tabla_entidad"></p></div></div></li>
+										    <li class="list-group-item"><div class="container"><div class="row justify-content-between bx-1"><p>Correo electrónico</p><p id="tabla_email"></p></div></div></li>
+										    <li class="list-group-item"><div class="container"><div class="row justify-content-between bx-1"><p>Número telefónico</p><p id="tabla_telefono"></p></div></div></li>
+										    <li class="list-group-item"><div class="container"><div class="row justify-content-between bx-1"><p>Celular</p><p id="tabla_celular"></p></div></div></li>
+    										<li class="list-group-item"><div class="container"><div class="row justify-content-between bx-1"><p>Dirección</p><p id="tabla_direccion"></p></div></div></li>
+    										<li class="list-group-item"><div class="container"><div class="row justify-content-between bx-1"><p>Escuela de procedencia</p><p id="tabla_escuela"></p></div></div></li>
+    										<li class="list-group-item"><div class="container"><div class="row justify-content-between bx-1"><p>Promedio</p><p id="tabla_promedio"></p></div></div></li>
   										</ul>
 									</div>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Modificar</button>
-                                    <button type="submit" onclick="return validar();"  class="btn btn-primary">Aceptar</button>
+                                    <button id="boton_enviar" type="submit" onclick="return validar();"  class="btn btn-primary">Aceptar</button>
                                 </div>
                             </div>
                         </div>
@@ -266,6 +272,21 @@
                 </form>
             </div>
         </div>
+	<script>
+		document.getElementById('esc-proc').addEventListener('input',activarCampo);
+		document.getElementById('boton_enviar').addEventListener('click',function(){
+			document.getElementById('modal_invalid').style.display = 'block';
+		});
+		function activarCampo(){
+			var escProc = document.getElementById('esc-proc');
+			if(escProc.value === 'otra'){
+				document.getElementById('otra-esc-div').style.display = 'block';
+			}
+			else{
+				document.getElementById('otra-esc-div').style.display = 'none';
+			}
+		}
+	</script>
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
