@@ -44,7 +44,6 @@ else
 					{
 						//El usuario es no es administrador
 						echo "usuario";
-
 					}
 				}
 				else
