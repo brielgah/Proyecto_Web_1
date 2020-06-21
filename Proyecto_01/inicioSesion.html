@@ -11,6 +11,24 @@
 </head>
 <body class="text-center">
 	<main class="container">
+		<nav class="navbar navbar-light navbar-expand-lg container" style="background-color: #e3f2fd;">
+			<div class="collapse navbar-collapse" id="navbar-content">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="./index.html">Registro</a>
+					</li>
+					<li class="nav-item active">
+						<a class="nav-link" href="https://www.ipn.mx/">IPN</a>
+					</li>
+					<li class="nav-item active">
+						<a class="nav-link" href="https://www.escom.ipn.mx/">ESCOM</a>
+					</li>
+				</ul>
+			</div>
+			<div class="navbar-nav mr-auto header">
+				<a class="nav-link" href="https://www.ipn.mx/"><img src="figures/ipn.png"  width="60" height="40" class="d-inline-block align-top" alt="ipn"></a>
+			</div>
+		</nav>
 		<form name="inicioSesion" method="post" action="./inicioSesion.php" target="_self" class="form-signin">
 			<div class="card bg-light mx-2 my-2 px-2 py-2">
 			<div class="card-header"><img class="mb-4" src="./figures/escom.png" alt="escom" width="122" height="96"></div>
@@ -20,10 +38,11 @@
 					<input name="user" type="text" id="user" placeholder="Usuario" class="form-control" required autofocus>
 					<small id="curp-help" class="form-text text-muted">Recuerda que tu usuario es tu CURP (lo puedes consultar <a href="https://www.gob.mx/curp/" class="" target="_blank">aquí</a>).</small>
 					<label for="password" class="sr-only">Ingresa tu contraseña</label>
-					<input name="password" type="text" id="password" placeholder="Contraseña" class="form-control">
+					<input name="password" type="password	" id="password" placeholder="Contraseña" class="form-control">
 					<small id="curp-help" class="form-text text-muted">Tu contraseña es tu boleta.</small>
 					<br>
 					<input type="submit" name="Ingresar" value="Iniciar Sesion" class="btn btn-primary btn-block">
+					<small id="curp-help" class="form-text text-muted">Si aún no te registras da clic <a href="./index.html" class="" target="_blank">aquí</a> para hacerlo.</small>
 				</fieldset>
 			</div>
 		</form>
