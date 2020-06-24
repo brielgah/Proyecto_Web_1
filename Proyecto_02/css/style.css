@@ -34,6 +34,23 @@ nav{
 	/*orginal image at https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Earthmap1000x500compac.jpg/640px-Earthmap1000x500compac.jpg */
 	background-size: cover;
 }
+.escom-logo-white{
+	background-image: url(../img/escom-logo-white.png);
+	background-size: contain;  
+	background-repeat: no-repeat;
+    background-position-y: center;
+	margin: auto;
+	width: 100%;
+	padding-top: 100%;
+}
+.globe-min-white{
+	background-image: url(../img/globe.png);
+	background-size: contain;  
+	background-repeat: no-repeat;
+    background-position-y: center;
+	margin: auto;
+	padding-top: 100%;
+}
 .globe{
 	background-image: url(../img/earth.png);
 	background-size: cover;
@@ -45,11 +62,38 @@ nav{
 	border-radius: 100%;
 	animation: rotate 25s linear alternate infinite;
 }
+.avion-animation{
+	background-image: url(../img/avion-right.png);
+	background-size: cover;  
+	width: 20%;
+	margin: auto;
+	height: 80px;
+	/*padding-top: 100%;*/
+	animation-delay: 2s;
+	animation: direction 10s linear infinite;
+}
 @keyframes rotate{
 	100%{background-position: 100%};
 }
-@keyframes spin {
-	to {
-		transform: translateX(-50%);
+@keyframes direction {
+	0%{
+		opacity: 0;
+	}
+	5%{
+		opacity: 0;
+		transform:translateX(-200%);
+	}
+	15%{
+		opacity: 1;
+	}
+	85%{
+		opacity: 1;
+	}
+	95%{
+		opacity: 0;
+		transform:translateX(200%);
+	}
+	100%{
+		opacity: 0;
 	}
 }
