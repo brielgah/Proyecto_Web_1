@@ -4,6 +4,7 @@
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 	<link rel="stylesheet" href="css/style.css">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<title>Movilidad Académica - Información</title>
 </head>
 <body>
@@ -18,8 +19,8 @@
         </ul>
       </div>
     </nav>
-        <div class="container-fluid" style="margin-top: 56px;">
-    	<div class="row banner align-items-center" style="background-color: #1169a3;">
+    <div class="container-fluid" style="margin-top: 56px;">
+    	<div class="row banner align-items-center" style="background-color: #1169a3;" id="banner">
     		<div class="col-1">
     			<div>
     				<div class="escom-logo-white"></div>
@@ -27,7 +28,7 @@
     		</div>
     		<div class="col">
     			<div>
-    				<div class="avion-animation"></div>
+    				<div id="avion" class="avion-animation"></div>
     			</div>
     		</div>
     		<div class="col-1">
@@ -87,7 +88,120 @@
 	      						<li>Promedio general mínimo de 8.0</li>
 	      					</ul>
 	      				</div>
-	      				<div class="tab-pane fade" id="list-etapas" role="tabpanel" aria-labelledby="list-etapas-list">En construccion</div>
+	      				<div class="tab-pane fade" id="list-etapas" role="tabpanel" aria-labelledby="list-etapas-list">
+	      					<h5 class="font-weight-bold">Etapas del Proceso de Movilidad</h5>
+	      					<div class="accordion" id="etapas">
+	      						<div class="card">
+	      							<div class="card-header" id="inscripcion">
+	      								<h2 class="mb-0">
+	      									<button class="btn btn-ligth btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse_inscripcion" aria-expanded="true" aria-controls="collapse_inscripcion">
+	      										Inscripción y Registro
+	      									</button>
+	      								</h2>
+	      							</div>
+	      							<div id="collapse_inscripcion" class="collapse show" aria-labelledby="inscripcion" data-parent="#list-etapas">
+	      								<div class="card-body">
+	      									<ol>
+	      										<li>La CCA emite las convocatorias de movilidad correspondientes al semestre actual</li>
+	      										<li>La UPIS difunde las convocatorias</li>
+	      										<li>El alumno verifica que cumple con TODOS los requisitos, particularmente el del idioma de la Universidad seleccionada y que en ella existe oferta educativa en el semestre en que va a participar y en el idioma que domina</li>
+	      										<li>
+	      											La UPIS solicita a Gestión Escolar:
+	      											<ul>
+	      												<li>Constancia de estudios que incluya el porcentaje de créditos y el promedio general.</li>
+	      												<li>Boleta global de estudios.</li>
+	      											</ul>
+	      										</li>
+	      										<li>El alumno se asegura de tener comprobante vigente de dominio del idioma. Si lo requiere, solicita a la UPIS apoyo para gestionar su presentación de examen de idioma en el CENLEX-IPN (realiza el pago correspondiente) o realiza el trámite por su cuenta en alguna otra institución acreditada para tal fin. Presenta el examen y obtiene el comprobante de dominio del Idioma)</li>
+	      										<li>El alumno solicita a la UPIS que gestione un oficio de postulación por parte del Director de la ESCOM</li>
+	      										<li>El alumno llena en línea el formato "Solicitud de Participación en el Programa de Movilidad (Formato CCA01). Estudiante-IPN"</li>
+	      										<li>El alumno elabora con asesoría del jefe del Departamento de Innovación Educativa el formato de equivalencias de materias (Formato CCA07) con un mínimo de 5 Unidades de Aprendizaje (UA), indicando el número de créditos. Sí pueden inscribirse UA que no vayan a ofertarse el siguiente semestre en la ESCOM, pero que estén en la Currícula de la carrera</li>
+	      										<li>El alumno entrega a la UPIS el expediente con toda la documentación y en el orden solicitado en la convocatoria. El expediente, se entregará en un folder tamaño carta, sin broche ni grapas y con su nombre en la pestaña: apellido paterno, materno y nombre(s)</li>
+	      									</ol>
+	      									<h5 class="font-italic">Documentos solicitados al alumno para la primera entrega</h5>
+	      									<ol>
+	      										<li>Oficio de postulación por parte del Director de la unidad académica</li>
+	      										<li>Solicitud de Participación en el Programa de Movilidad Académica se llena en línea, y se imprime</li>
+	      										<li>Copia legible de la constancia de estudios que incluya el porcentaje de créditos y el promedio general</li>
+	      										<li>Copia legible de la Boleta global de estudios</li>
+	      										<li>Copia del comprobante del domino de idioma requerido por la institución de destino</li>
+	      										<li>Carta de motivos redactada en idioma Inglés</li>
+	      										<li>Currículum Vitae resumido (máximo dos hojas, formato europeo)</li>
+	      										<li>Copia de identificación oficial con fotografía</li>
+	      									</ol>
+	      								</div>
+	      							</div>
+	      							<div class="card-header" id="asignacion">
+	      								<h2 class="mb-0">
+	      									<button class="btn btn-ligth btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse_asignacion" aria-expanded="false" aria-controls="collapse_asignacion">
+	      										Asignación, Postulación y Aceptación
+	      									</button>
+	      								</h2>
+	      							</div>
+	      							<div id="collapse_asignacion" class="collapse" aria-labelledby="asignacion" data-parent="#list-etapas">
+	      								<div class="card-body">
+	      									<ol>
+	      										<li>La UPIS recibe los documentos que integrarán el expediente del alumno y lo envía a CCA</li>
+	      										<li>CCA recibe y analiza los expedientes y los envía a las Universidades destino y espera respuesta. Da a conocer los resultados e indica la fecha para la segunda entrega de documentos (envía check list al alumno)</li>
+	      										<li>El alumno integra la documentación según el checklist y la entrega a CCA, con la persona y fecha que se indica</li>
+	      										<li>CCA recibe y revisa la documentación. Realiza los trámites correspondientes al interior del Instituto para que se analice y apruebe académicamente la movilidad. CCA o la Universidad destino envía al alumno la carta de aceptación. A partir de ahí el alumno puede establecer contacto directo con la Universidad destino. CCA determina el apoyo económico y envía una carta al alumno. El tiempo aproximado para todos los trámites es de 2 meses</li>
+	      										<li>El alumno tramita un seguro de gastos médicos mayores. Con este seguro, su carta de aceptación Universidad destino; carta apoyo económico y demás requisitos tramita su visa de estudiante. Con visa y todo lo necesario compra un boleto redondo para el viaje. ANTES DE IRSE, se inscribe normalmente en la ESCOM a su siguiente semestre. Aparecerá en SAES como estudiante en movilidad . No aparecerá en listas por lo que no habrá caificación a reportar en la Unidad</li>
+	      									</ol>
+	      									<h5 class="font-italic">Documentos solicitados al alumno para la segunda entrega</h5>
+	      									<ol>
+	      										<li>Formatos solicitados por la institución de destino (solicitud, formatos de materias, etc.)</li>
+	      										<li>Boleta global de calificaciones traducida por un perito certificado en los casos que sea requerida por la institución de destino</li>
+	      										<li>Constancia original de estudios traducida por un perito certificado en los casos que sea requerida por la institución de destino</li>
+	      										<li>COMPROBANTE DEL DOMINIO DE IDIOMA requerido por la institución de destino</li>
+	      										<li>Copia del pasaporte (con vigencia de por lo menos seis meses posteriores la fecha estimada de terminación de la estancia)</li>
+	      										<li>Mapa curricular de la institución de destino (indicando con marca textos los cursos que aparecen en el CCA07)</li>
+	      										<li>Formato CCA07 debidamente firmado y sellado con fecha actualizada. Las asignaturas de la institución de destino deberán escribirse en el idioma en que se encuentra en el mapa curricular de la institución de destino, indicando entre paréntesis el número de créditos ( mínimo 5 asignaturas del mapa curricular)</li>
+	      										<li>Carta compromiso (Formato CCA05)</li>
+	      										<li>Carta de Apoyo Económico o cuenta bancaria con monto estipulado por la insititución destino, en caso de que sea requerida por la misma**</li>
+	      									</ol>
+	      									<p class="font-weight-light">** No todas las instituciones lo solicitan. Verificar los requisitos de cada Universidad o país destino para más información.</p>
+	      								</div>
+	      							</div>
+	      							<div class="card-header" id="participacion">
+	      								<h2 class="mb-0">
+	      									<button class="btn btn-ligth btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse_participacion" aria-expanded="false" aria-controls="collapse_participacion">
+	      										Participación
+	      									</button>
+	      								</h2>
+	      							</div>
+	      							<div id="collapse_participacion" class="collapse" aria-labelledby="participacion" data-parent="#list-etapas">
+	      								<div class="card-body">
+	      									<ol>
+	      										<li>El alumno se reincorpora a la ESCOM, se inscribe normalmente a su siguiente semestre. Entrega a CCA (Departamento de Seguimiento y Evaluación) su certificado de fin de estancia</li>
+	      										<li>CCA recibe boleta de calificaciones de la Universidad destino y la envía a la DES ccp para la ESCOM</li>
+	      										<li>UPIS envía copia de boleta de calificaciones a Innovación Educativa para que verifique cuidadosamente nombres de Unidad de Aprendizaje (UA) y el número de créditos en CCA07 definitivo</li>
+	      										<li>Innovación Educativa envía a la DES (mediante oficio) CCA07 definitivo así como boleta global de calificaciones para dictamen técnico de equivalencia de UA cursadas en movilidad</li>
+	      										<li>La DES emite (en el transcurso de 3 meses aproximadamente) el Dictamen de Revalidación correspondiente y solicita a la DAE emita la Equivalencia respectiva</li>
+	      										<li>La DAE emite la Constancia de Equivalencia (Revalidación de estudios) correspondiente que entregará al alumn@ para que lleve a Gestión Escolar de la ESCOM para su registro en el SAES, a su vez, deberá también entregar una copia en las oficinas de la UPIS para la finalización del proceso en su expediente</li>
+	      									</ol>
+	      								</div>
+	      							</div>
+	      							<div class="card-header" id="reincorporacion">
+	      								<h2 class="mb-0">
+	      									<button class="btn btn-ligth btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse_reincorporacion" aria-expanded="false" aria-controls="collapse_reincorporacion">
+	      										Participación
+	      									</button>
+	      								</h2>
+	      							</div>
+	      							<div id="collapse_reincorporacion" class="collapse" aria-labelledby="reincorporacion" data-parent="#list-etapas">
+	      								<div class="card-body">
+	      									<ol>
+	      										<li>El alumno se traslada a la institución de destino. Se presenta, registra e inscribe las materias seleccionadas en su CCA07. Cualquier cambio en las materias propuestas para cursar en movilidad, notificará al jefe de Innovación Educativa (ccp área movilidad y CCA)</li>
+	      										<li>El alumno envía a la CCA (Depto de Seguimiento y Evaluación) y a la UPIS el comprobante de inscripción en la institución de destino y los Programas de los cursos a los que se inscribió (durante el primer mes de estancia)</li>
+	      										<li>UPIS envía a Innovación Educativa el comprobante de inscripción y los programas de los cursos para que elabore el análisis de equivalencia de las unidades de aprendizaje para CCA07 Definitivo</li>
+	      										<li>El alumno cursa y acredita las materias inscritas en la institución de destino</li>
+	      										<li>Al concluir su movilidad, el alumno, deberá asegurarse de que se le emita su Certificado de Fin de Estancia; así como de realizar los trámites necesarios para que se emita su boleta de calificaciones de los cursos realizados; y de no dejar algún pendiente en la institución de destino en la que se participó (académico, administrativo o económico)</li>
+	      									</ol>
+	      								</div>
+	      							</div>
+	      						</div>
+	      					</div>
+	      				</div>
 	      				<div class="tab-pane fade" id="list-becas" role="tabpanel" aria-labelledby="list-becas-list">
 	      					<h5 class="font-weight-bold">Becas</h5>
 	      					<p>Los estudiantes podrán mantener su beca durante el tiempo que participen en un programa de movilidad académica, de acuerdo con la normatividad existente. Así como el apoyo económico que otorga la Coordinación de Cooperación Académica, la cual es para sufragar los gastos de manutención durante su estancia de movilidad, siempre y cuando la realicen en una institución que se encuentre en otra localidad diferente a donde se encuentra la escuela de origen (ESCOM). Esto como parte para alimentación, alojamiento y transporte durante la estancia de movilidad internacional, por un máximo de 5 meses y por una sola ocasión en un programa académico.</p>
@@ -97,7 +211,7 @@
 			</div>
 		</div>
     </div>
-	<footer class="jumbotron jumbotron-fluid my-5">
+	<footer class="jumbotron jumbotron-fluid mt-5 mb-0">
 		<div class="container">
 			<div class="row">
 				<div class="col">
@@ -112,6 +226,7 @@
 			</div>
 		</div>
 	</footer>
+	<script type="text/javascript" src="js/banner.js"></script>
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>

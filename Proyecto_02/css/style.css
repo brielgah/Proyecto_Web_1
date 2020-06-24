@@ -64,10 +64,12 @@ nav{
 }
 .avion-animation{
 	background-image: url(../img/avion-right.png);
-	background-size: cover;  
-	width: 20%;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position-y: center;
+	width: 100%;
 	margin: auto;
-	height: 80px;
+	/*height: 80px;*/
 	/*padding-top: 100%;*/
 	animation-delay: 2s;
 	animation: direction 10s linear infinite;
@@ -81,7 +83,7 @@ nav{
 	}
 	5%{
 		opacity: 0;
-		transform:translateX(-200%);
+		background-position: 0%;
 	}
 	15%{
 		opacity: 1;
@@ -91,7 +93,7 @@ nav{
 	}
 	95%{
 		opacity: 0;
-		transform:translateX(200%);
+		background-position: 100%;
 	}
 	100%{
 		opacity: 0;
