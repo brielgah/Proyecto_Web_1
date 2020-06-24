@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html>
     <head>
         <meta charset="UTF-8">
@@ -44,7 +43,6 @@
                             <tr>
                                 <th scope="col">Boleta</th>
                                 <th scope="col">Nombre(s)</th>
-                                <th scope="col">Apellidos</th>
                                 <th scope="col">Modificar</th>
                                 <th scope="col">Eliminar</th>
                                 <th scope="col">PDF</th>    

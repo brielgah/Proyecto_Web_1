@@ -30,7 +30,7 @@ else
 			mysqli_stmt_bind_param($consulta,'ss',$user,$password);
 			if(mysqli_stmt_execute($consulta))
 			{
-				mysqli_stmt_bind_result($consulta,$usuario,$password,$id);
+				mysqli_stmt_bind_result($consulta,$usuario,$passwd,$id);
 				mysqli_stmt_fetch($consulta);
 				//Existe el usuario
 				if($usuario == $user)
@@ -38,12 +38,15 @@ else
 					if($id != 0)
 					{	
 						//El usuario es administrador
-						echo "administrador";
+						header('Location:./sesionAdmin.php');
 					}
 					else
 					{
 						//El usuario es no es administrador
-						echo "usuario";
+						session_start();
+						$_SESSION["username"]=$usuario;
+						$_SESSION["password"]=$passwd;
+						header('Location:./sesionAlumno.php');
 					}
 				}
 				else

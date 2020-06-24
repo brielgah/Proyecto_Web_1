@@ -1,5 +1,50 @@
+<?php
+    session_start();
+    $user=$_SESSION["username"];
+    $pass=$_SESSION["password"];
+    $consulta_temp="SELECT * FROM datos WHERE curp=?";
+    $conexion = mysqli_connect("localhost","root","57425595","alumnos");
+    if(!$conexion)
+    {
+        mysqli_close($conexion);
+        echo "<script>
+            alert('Error al conectarse a la Base de Datos');
+            window.location='./index.html';
+            </script>";
+    }
+    else
+    {   
+        if($consulta=mysqli_prepare($conexion,$consulta_temp))
+        {
+            mysqli_stmt_bind_param($consulta,'s',$user);
+            if(mysqli_stmt_execute($consulta))
+            {
+                mysqli_stmt_bind_result($consulta,$nombre,$escuela,$direccion,$email,$fechaNacimiento,$telefono,$celular,$promedio,$curp,$boleta,$estado);
+                mysqli_stmt_fetch($consulta);
+            }
+            else
+            {
+                mysqli_stmtm_close($conexion);
+                mysqli_close($conexion);
+                echo "<script>
+                    alert('Hubo un error al realizar la consulta');
+                    window.location='./index.html';
+                    </script>"; 
+            }
+        }
+        else
+        {
+            mysqli_stmtm_close($conexion);
+            mysqli_close($conexion);
+            echo "<script>
+                    alert('Hubo un error al realizar la consulta');
+                    window.location='./index.html';
+                 </script>"; 
+        }
+    }
+    session_destroy();
+?>
 <!DOCTYPE html>
-
 <html>
     <head>
         <meta charset="UTF-8">
@@ -42,37 +87,37 @@
                         <h1>Información personal</h1>
                     </div>
                     <div class="card-body">
-                        <div class="card-title"><h2>Alumno: </h2></div>
+                        <div class="card-title"><h2>Alumno: <?php echo $nombre ?> </h2></div>
                         <div class="card-text">
                             <div class="list-group">
                                 <div class="row list-group-item">
                                     <div class="col-md-4">
-                                        <p><strong>Boleta:</strong></p>
+                                        <p><strong>Boleta: </strong><?php echo $boleta ?></p>
                                     </div>
                                     <div class="col-md-4">
-                                        <p><strong>Fecha de nacimiento: </strong></p>
+                                        <p><strong>Fecha de nacimiento: </strong><?php echo $fechaNacimiento ?></p>
                                     </div>
                                     <div class="col-md-4">
-                                        <p><strong>CURP:</strong></p> 
+                                        <p><strong>CURP: </strong><?php echo $curp ?></p> 
                                     </div>
                                 </div>
                                 <div class="row list-group-item">
                                     <div class="col-md-5">
-                                        <p><strong>Entidad de nacimiento: </strong></p>
+                                        <p><strong>Entidad de nacimiento: </strong><?php echo estado ?> </p> 
                                     </div>
                                     <div class="col-md-5">
-                                        <p><strong>Dirección: </strong></p>
+                                        <p><strong>Dirección:  </strong><?php echo $direccion ?></p>
                                     </div>
                                 </div>
                                 <div class="row list-group-item">
                                     <div class="col-md-3">
-                                        <p><strong>Teléfono:</strong></p>
+                                        <p><strong>Teléfono:  </strong><?php echo $telefono ?></p>
                                     </div>
                                     <div class="col-md-3">
-                                        <p><strong>Celular: </strong></p>
+                                        <p><strong>Celular: </strong><?php echo $celular ?></p>
                                     </div>
                                     <div class="col-md-4">
-                                        <p><strong>Escuela de procedencia:</strong></p>
+                                        <p><strong>Escuela de procedencia: </strong><?php echo $escuela ?></p>
                                     </div>
                                 </div>
                             </div>
