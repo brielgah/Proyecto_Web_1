@@ -2,37 +2,22 @@ $(document).ready(function(){
     $("#identidad").prop("disabled", true);
     $("#procedencia").prop("disabled", true);
     $("#contacto").prop("disabled", true);
-    $("#save_id").prop("disabled", true);
-    $("#save_cont").prop("disabled", true);
-    $("#save_proc").prop("disabled", true);
-    $("#but_id").click(function(){
+    $("#save").prop("disabled", true);
+
+    $("#modificar").click(function(){
         $("#identidad").prop("disabled", false);
-        $("#but_id").prop("disabled", true);
-        $("#save_id").prop("disabled", false);
-    });
-    $("#save_id").click(function(){
-        $("#identidad").prop("disabled", true);
-        $("#but_id").prop("disabled", false);
-        $("#save_id").prop("disabled", true);
-    });
-    $("#but_cont").click(function(){
-        $("#contacto").prop("disabled", false);
-        $("#but_cont").prop("disabled", true);
-        $("#save_cont").prop("disabled", false);
-    });
-    $("#save_cont").click(function(){
-        $("#contacto").prop("disabled", true);
-        $("#but_cont").prop("disabled", false);
-        $("#save_cont").prop("disabled", true);
-    });
-    $("#but_proc").click(function(){
+        $("#modificar").prop("disabled", true);
+        $("#save").prop("disabled", false);
+        $("#identidad").prop("disabled", false);
         $("#procedencia").prop("disabled", false);
-        $("#but_proc").prop("disabled", true);
-        $("#save_proc").prop("disabled", false);
+        $("#contacto").prop("disabled", false);
     });
-    $("save_proc").click(function(){
+    $("#save").click(function(){
+        $("#identidad").prop("disabled", true);
+        $("#modificar").prop("disabled", false);
+        $("#save").prop("disabled", true);
+        $("#identidad").prop("disabled", true);
         $("#procedencia").prop("disabled", true);
-        $("#but_proc").prop("disabled", false);
-        $("#save_proc").prop("disabled", true);
+        $("#contacto").prop("disabled", true);
     });
 });

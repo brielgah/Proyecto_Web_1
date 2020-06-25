@@ -39,7 +39,7 @@
         <title>Datos de alumno</title>
 		<link rel="stylesheet" href="styles/styles.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-		<script src="enableDisable"></script>
+		<script src="enableDisable.js"></script>
 	</head>
 	<body>
 		<nav class="navbar navbar-expand-lg navbar-light container" style="background-color: #e3f2fd;">
@@ -73,12 +73,12 @@
 										<div class="col-md-6">
                                             <label for="ap-paterno">Apellido paterno:</label>
                                             <input type="text" id="ap-paterno" name="ap-paterno" class="form-control" value="<?php echo $ap_paterno ?>">
-					    <!--<div id="invalid_ap_paterno" class="invalid-feedback"><p></p></div>-->
+					    <div id="invalid_ap_paterno" class="invalid-feedback"><p></p></div>
                                         </div>
                                         <div class="col-md-6">
                                             <label for="ap-materno">Apellido materno: </label>
                                             <input type="tetx" id="ap-materno" name="ap-materno"  class="form-control" value="<?php echo $ap_materno; ?>" required >
-					    <!--<div id="invalid_ap_materno" class="invalid-feedback"><p></p></div>-->
+					    <div id="invalid_ap_materno" class="invalid-feedback"><p></p></div>
                                         </div>
                                         <div class="col-md-6">
                                             <label for="nombre">Nombre:</label>
@@ -88,7 +88,7 @@
                                         <div class="col-md-6">
                                             <label for="boleta">Número de boleta: </label>
                                             <input type="text" id="boleta" name="boleta" class="form-control" value="<?php echo $boleta; ?>" required>
-					    <!--<div id="invalid_boleta" class="invalid-feedback"><p></p></div>-->
+					    <div id="invalid_boleta" class="invalid-feedback"><p></p></div>
                                         </div>
                                     </div>
                                 </div>
@@ -146,12 +146,7 @@
                                 </div>
 							</div>
 						</fieldset>
-						<div class="card-footer">
-							<button type="button" class="btn btn-secondary" id="but_id">Modificar</button>
-							<button type="button" class="btn btn-secondary" id="save_id">Guardar</button>
-						</div>
 					</div>
-					
 					<br>
 					<div class="card bg-light mx-2 my-2 px-2 py-2">
                     	<fieldset id="contacto" class="form-group">
@@ -203,10 +198,6 @@
                                 </div>
 							</div>
 						</fieldset>
-						<div class="card-footer">
-							<button type="button" class="btn btn-secondary" id="but_cont">Modificar</button>
-							<button type="button" class="btn btn-secondary" id="save_cont">Guardar</button>
-						</div>
                     </div>
                     <br>
                     <div class="card bg-light mx-2 my-2 px-2 py-2">
@@ -241,10 +232,10 @@
                                 </div>
                             </div>
 						</fieldset>
-						<div class="card-footer">
-							<button type="button" class="btn btn-secondary" id="but_proc">Modificar</button>
-							<button type="button" class="btn btn-secondary" id="save_proc">Guardar</button>
-						</div>
+					</div>
+                    <div class="text-center container">
+						<button type="button" class="btn btn-secondary" id="modificar">Modificar</button>
+						<button type="button" class="btn btn-secondary" id="save">Guardar y salir</button>
 					</div>
                 </form>
             </div>
