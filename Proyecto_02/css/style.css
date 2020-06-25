@@ -74,6 +74,19 @@ nav{
 	animation-delay: 2s;
 	animation: direction 10s linear infinite;
 }
+.item{
+	position: relative;
+	height: 100%;
+}
+.item > img{
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+.bg-night{
+	background-color: rgba(0, 0, 0, 0.64);
+	border-radius: 1%;
+}
 @keyframes rotate{
 	100%{background-position: 100%};
 }
