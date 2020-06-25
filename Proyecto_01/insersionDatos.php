@@ -1,7 +1,11 @@
 <?php
-	$nombre=".$_POST["ap-paterno"]." ".$_POST["ap-materno"]." ".$_POST["nombre"].";	
+	$ap_paterno=".$_POST["ap-paterno"].";	
+	$ap_materno=".$_POST['ap-materno'].";
+	$nombre=".$_POST['nombre'].";
 	$escuela=".$_POST[].";
-	$direccion=".$_POST["direccion"]." ".$_POST["municipio"]." CP:".$_POST["codigo_postal"]".;
+	$direccion=".$_POST["direccion"].";
+	$municipio=".$_POST["municipio"].";
+	$cp=$_POST["codigo_postal"];
 	$email=".$_POST["mail"].";
 	$fechaNacimiento=".$_POST["fecha-nac"].";
 	$telefono=$_POST["telefono"];
@@ -11,10 +15,9 @@
 	$boleta=".$_POST["boleta"].";
 	$estado=".$_POST["entidad"]."; 
 
-	$query1="INSERT INTO datos VALUES('$nombre','$escuela','$direccion','$email','$fechaNacimiento',$telefono,$celular,$promedio,'curp','boleta','estado')"
+	$query1="INSERT INTO datos VALUES($nombre,$ap_paterno,$ap_materno,$escuela,$estado,$direccion,$municipio,$cp,$email,$fechaNacimiento,$telefono,$celular,$promedio,$curp,$boleta)"
 	$query2="INSERT INTO alumno VALUES('$curp','$boleta')";
 	$query3="DELETE FROM alumno WHERE curp=$curp"
-
 
 	$conexion=mysqli_connect("localhost","root","57425595","alumnos");
 	if(!$conexion)
@@ -35,7 +38,7 @@
 			{
 				mysqli_close($conexion);
 				echo "<script>
-					alert('Tus datos se han ingresado correctamente');
+					alert('Los datos se han ingresado correctamente');
 					window.location='./index.html';
 					</script>";
 			}

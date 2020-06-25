@@ -21,6 +21,7 @@
 			{
 				echo "<script>
 					alert('Se ha eliminado correctamente el alumno');
+					window.location='./sesionAdmin.php';
 					</script>";
 			}
 			else
@@ -38,5 +39,5 @@
 		}
 	}
 	mysqli_close($conexion);
-	echo "<script> window.location='./index.html' </script>";
+	echo "<script> window.location='./sesionAdmin.php' </script>";
 >?

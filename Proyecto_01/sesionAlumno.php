@@ -19,7 +19,7 @@
             mysqli_stmt_bind_param($consulta,'s',$user);
             if(mysqli_stmt_execute($consulta))
             {
-                mysqli_stmt_bind_result($consulta,$nombre,$escuela,$direccion,$email,$fechaNacimiento,$telefono,$celular,$promedio,$curp,$boleta,$estado);
+                mysqli_stmt_bind_result($consulta,$nombre,$ap_paterno,$ap_materno,$escuela,$estado,$direccion,$municipio,$cp,$email,$fechaNacimiento,$telefono,$celular,$promedio,$curp,$boleta);
                 mysqli_stmt_fetch($consulta);
             }
             else
@@ -42,7 +42,6 @@
                  </script>"; 
         }
     }
-    session_destroy();
 ?>
 <!DOCTYPE html>
 <html>
@@ -87,37 +86,37 @@
                         <h1>Información personal</h1>
                     </div>
                     <div class="card-body">
-                        <div class="card-title"><h2>Alumno: <?php echo $nombre ?> </h2></div>
+                        <div class="card-title"><h2>Alumno: <?php echo $ap_paterno." ".$ap_materno." ".$nombre; ?> </h2></div>
                         <div class="card-text">
                             <div class="list-group">
                                 <div class="row list-group-item">
                                     <div class="col-md-4">
-                                        <p><strong>Boleta: </strong><?php echo $boleta ?></p>
+                                        <p><strong>Boleta: </strong> <?php echo $boleta; ?></p>
                                     </div>
                                     <div class="col-md-4">
-                                        <p><strong>Fecha de nacimiento: </strong><?php echo $fechaNacimiento ?></p>
+                                        <p><strong>Fecha de nacimiento: </strong><?php echo $fechaNacimiento; ?></p>
                                     </div>
                                     <div class="col-md-4">
-                                        <p><strong>CURP: </strong><?php echo $curp ?></p> 
+                                        <p><strong>CURP: </strong><?php echo $curp; ?></p> 
                                     </div>
                                 </div>
                                 <div class="row list-group-item">
                                     <div class="col-md-5">
-                                        <p><strong>Entidad de nacimiento: </strong><?php echo estado ?> </p> 
+                                        <p><strong>Entidad de nacimiento: </strong><?php echo $estado; ?> </p> 
                                     </div>
                                     <div class="col-md-5">
-                                        <p><strong>Dirección:  </strong><?php echo $direccion ?></p>
+                                        <p><strong>Dirección:  </strong><?php echo $direccion." ".$municipio." ".$cp; ?></p>
                                     </div>
                                 </div>
                                 <div class="row list-group-item">
                                     <div class="col-md-3">
-                                        <p><strong>Teléfono:  </strong><?php echo $telefono ?></p>
+                                        <p><strong>Teléfono:  </strong><?php echo $telefono; ?></p>
                                     </div>
                                     <div class="col-md-3">
-                                        <p><strong>Celular: </strong><?php echo $celular ?></p>
+                                        <p><strong>Celular: </strong><?php echo $celular; ?></p>
                                     </div>
                                     <div class="col-md-4">
-                                        <p><strong>Escuela de procedencia: </strong><?php echo $escuela ?></p>
+                                        <p><strong>Escuela de procedencia: </strong><?php echo $escuela; ?></p>
                                     </div>
                                 </div>
                             </div>
