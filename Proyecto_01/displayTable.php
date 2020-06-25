@@ -17,17 +17,6 @@ else{
 				window.location='./index.html';
 				</script>";
     }
-    else{
-        while($row = mysqli_fetch_array($result)){
-            echo "<tr>";
-            echo "<td>".$row['boleta']."</td>";
-            echo "<td>".$row['ap_paterno']." ".$row['ap_materno']." ".$row['nombre']."</td>";
-            echo "<td>Prueba</td>";
-            echo "<td>Prueba</td>";
-            echo "<td>Prueba</td>";
-            echo "</tr>";
-        }
-    }
 }
 mysqli_close($con);
 ?>

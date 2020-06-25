@@ -1,3 +1,7 @@
+<?php
+    include('displayTable.php');
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -50,7 +54,19 @@
                         </thead>
                         <tbody>
                             <?php 
-                                include('displayTable.php');
+                                while($alumno=mysqli_fetch_object($result))
+                                {
+                            ?>
+                            <tr>
+                                <td> <?php echo "$alumno->boleta"; ?> </td>
+                                <td> <?php echo "$alumno->ap_paterno"." "."$alumno->ap_materno"." "."$alumno->nombre"; ?> </td>
+                                <td> <a href="./modificacionDatos.php?boleta=<?php echo $alumno->boleta;?>">Modificar </a> </td>
+                                <td> <a href="./eliminacionDatos.php?boleta=<?php echo $alumno->boleta;?>">Eliminar </a> </td>
+                                <td> <a href="./modificacionDatos.php?boleta=<?php echo $alumno->boleta; ?>">Generar </a> </td>
+                            </tr>
+                            <?php
+                                }
+                                mysqli_free_result($result);
                             ?>
                         </tbody>
                     </table>

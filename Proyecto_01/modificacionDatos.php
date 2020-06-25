@@ -1,18 +1,35 @@
 <?php
-	$data = array(
-		'nombre' 		=> 'Esteban',
-		'curp' 			=> 'OERE000404HDFLMSA7',
-		'paterno'		=> 'Olmedo',
-		'ap-materno'	=> 'Ramírez',
-		'direccion' 	=> "Francisco Villa Lt. 13 Mz 1",
-		'email'			=> 'esteban.olmedo.ramirez@gmail.com',
-		'telefono'		=> '57906726',
-		'celular'		=> '5586876873',
-		'municipio' 	=> 'Ecatepec',
-		'cp'			=> '55210',
-		'boleta' 		=> '2019630134'
-
-	);
+	$boleta=$_GET["boleta"];
+	$query1="SELECT * FROM datos WHERE boleta=?";
+	$conexion=mysqli_connect("localhost","root","57425595","alumnos");
+	if(!$conexion)
+	{
+		echo "<script>
+				alert('Error al conectarse a la Base de Datos');
+				window.location='./sesionAdmin.php';
+				</script>";
+	}
+	else
+	{
+		if($consulta=mysqli_prepare($conexion,$query1))
+        {
+            mysqli_stmt_bind_param($consulta,'s',$boleta);
+            if(mysqli_stmt_execute($consulta))
+            {
+                mysqli_stmt_bind_result($consulta,$nombre,$ap_paterno,$ap_materno,$escuela,$estado,$direccion,$municipio,$cp,$email,$fechaNacimiento,$telefono,$celular,$promedio,$curp,$boleta);
+                mysqli_stmt_fetch($consulta);
+            }
+            else
+            {
+                mysqli_stmtm_close($conexion);
+                mysqli_close($conexion);
+                echo "<script>
+                    alert('Hubo un error al realizar la consulta');
+                    window.location='./index.html';
+                    </script>"; 
+            }
+        }
+	}
 ?>
 <html>
 	<head>
@@ -55,22 +72,22 @@
                                    	<div class="form-row">
 										<div class="col-md-6">
                                             <label for="ap-paterno">Apellido paterno:</label>
-                                            <input type="text" id="ap-paterno" name="ap-paterno" class="form-control" value="<?php echo $data['paterno'] ?>">
+                                            <input type="text" id="ap-paterno" name="ap-paterno" class="form-control" value="<?php echo $ap_paterno ?>">
 					    <!--<div id="invalid_ap_paterno" class="invalid-feedback"><p></p></div>-->
                                         </div>
                                         <div class="col-md-6">
                                             <label for="ap-materno">Apellido materno: </label>
-                                            <input type="tetx" id="ap-materno" name="ap-materno"  class="form-control" value="<?php echo $data['ap-materno']; ?>" required >
+                                            <input type="tetx" id="ap-materno" name="ap-materno"  class="form-control" value="<?php echo $ap_materno; ?>" required >
 					    <!--<div id="invalid_ap_materno" class="invalid-feedback"><p></p></div>-->
                                         </div>
                                         <div class="col-md-6">
                                             <label for="nombre">Nombre:</label>
-                                            <input type="text" id="nombre" name="nombre" value = "<?php echo $data['nombre']; ?>" class="form-control" required>
+                                            <input type="text" id="nombre" name="nombre" value = "<?php echo $nombre; ?>" class="form-control" required>
 					    <div id="invalid_nombre" class="invalid-feedback"><p></p></div>
                                         </div>
                                         <div class="col-md-6">
                                             <label for="boleta">Número de boleta: </label>
-                                            <input type="text" id="boleta" name="boleta" class="form-control" value="<?php echo $data['boleta']; ?>" required>
+                                            <input type="text" id="boleta" name="boleta" class="form-control" value="<?php echo $boleta; ?>" required>
 					    <!--<div id="invalid_boleta" class="invalid-feedback"><p></p></div>-->
                                         </div>
                                     </div>
@@ -86,7 +103,7 @@
                                     </div>
                                     <div class="col-md-3 mb-3">
                                         <label for="curp" required>CURP:</label>
-                                        <input type="text" id="curp" name="curp" class="form-control" value="<?php echo $data['curp']; ?>">
+                                        <input type="text" id="curp" name="curp" class="form-control" value="<?php echo $curp; ?>">
 					    <div id="invalid_curp" class="invalid-feedback"><p></p></div>
                                     </div>
                                     <div class="col-md-3 mb-3">
@@ -138,7 +155,7 @@
 					<br>
 					<div class="card bg-light mx-2 my-2 px-2 py-2">
                     	<fieldset id="contacto" class="form-group">
-                            <div class="card-header">
+        	                <div class="card-header">
                                 <legend class="text-center">Datos de contacto</legend>
                             </div>
                             <div class="card-body">
@@ -149,12 +166,12 @@
                                                 <path fill-rule="evenodd" d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z"/>
                                             </svg>
                                             </label>
-                                            <input type="email" id="mail" name="mail" class="form-control" required value="<?php echo $data['email']; ?>">
+                                            <input type="email" id="mail" name="mail" class="form-control" required value="<?php echo $email ?>">
 					    <div id="invalid_email" class="invalid-feedback"><p></p></div>
                                         </div>
                                         <div class="col">
                                             <label for="telefono" required>Número telefónico: </label>
-                                            <input type="text" id="telefono" name="telefono" class="form-control" required value="<?php echo $data['telefono']; ?>">
+                                            <input type="text" id="telefono" name="telefono" class="form-control" required value="<?php echo $telefono ?>">
 					    <div id="invalid_telefono" class="invalid-feedback"><p></p></div>
                                         </div>
                                         <div class="col">
@@ -162,7 +179,7 @@
                                                 <path fill-rule="evenodd" d="M11 1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H5z"/>
                                                 <path fill-rule="evenodd" d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
                                             </svg></label>
-                                            <input type="text" id="cel" name="cel" required class="form-control" value="<?php echo $data['celular']; ?>">
+                                            <input type="text" id="cel" name="cel" required class="form-control" value="<?php echo $celular; ?>">
 					    <div id="invalid_celular" class="invalid-feedback"><p></p></div>
                                         </div>
                                     </div>
@@ -171,15 +188,15 @@
                                     </svg></label>
                                     <div class="form-row">
                                         <div class="col-md-7">
-                                            <input type="text" id="direccion" name="direccion" class="form-control" required value="<?php echo $data['direccion']; ?>">
+                                            <input type="text" id="direccion" name="direccion" class="form-control" required value="<?php echo $direccion; ?>">
 					    <div id="invalid_direccion" class="invalid-feedback"><p></p></div>
                                         </div>
                                         <div class="col-md">
-                                            <input type="text" id="municipio" name="municipio" class="form-control" required value="<?php echo $data['municipio']; ?>">
+                                            <input type="text" id="municipio" name="municipio" class="form-control" required value="<?php echo $municipio; ?>">
 					    <div id="invalid_municipio" class="invalid-feedback"><p></p></div>
                                         </div>
                                         <div class="col-md">
-                                            <input type="text" id="codigo_postal" name="codigo_postal" class="form-control" required value="<?php echo $data['cp']; ?>">
+                                            <input type="text" id="codigo_postal" name="codigo_postal" class="form-control" required value="<?php echo $cp; ?>">
 					    <div id="invalid_codigo_postal" class="invalid-feedback"><p></p></div>
                                         </div>
                                     </div>
