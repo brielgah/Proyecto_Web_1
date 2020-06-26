@@ -61,7 +61,7 @@
 		</nav>
         <div class="container mt-4">
             <div class="container">
-                <form id="datos_para_modificar" method="post" action="" >
+                <form id="datos_para_modificar" method="post" action="./modificarDatos.php" target="_parent">
                     <div class="card bg-light mx-2 my-2 px-2 py-2">
 						<fieldset id="identidad" class="form-group">
                             <div class="card-header">
@@ -235,7 +235,7 @@
 					</div>
                     <div class="text-center container">
 						<button type="button" class="btn btn-secondary" id="modificar">Modificar</button>
-						<button type="button" class="btn btn-secondary" id="save">Guardar y salir</button>
+						<button type="submit" class="btn btn-secondary" id="save">Guardar y salir</button>
 					</div>
                 </form>
             </div>

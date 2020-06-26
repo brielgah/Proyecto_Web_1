@@ -1,4 +1,5 @@
 <?php
+	echo "entra";
 	$ap_paterno=".$_POST["ap-paterno"].";	
 	$ap_materno=".$_POST['ap-materno'].";
 	$nombre=".$_POST['nombre'].";
