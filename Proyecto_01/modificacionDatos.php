@@ -1,4 +1,5 @@
 <?php
+/*
 	$boleta=$_GET["boleta"];
 	$query1="SELECT * FROM datos WHERE boleta=?";
 	$conexion=mysqli_connect("localhost","root","57425595","alumnos");
@@ -30,7 +31,7 @@
             }
         }
 	}
-?>
+*/?>
 <html>
 	<head>
 	<meta charset="UTF-8">
