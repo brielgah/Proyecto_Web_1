@@ -1,0 +1,41 @@
+\documentclass{article}
+\usepackage{textcomp}
+\usepackage[T1]{fontenc}
+\usepackage{vmargin}
+\usepackage[spanish]{babel}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{fontspec}
+\newcommand{\placeholder}[1]{\textbf{$<$ #1 $>$}}
+
+\newcommand{\nombre}{\placeholder{Nombre: }}
+\newcommand{\boleta}{\placeholder{Boleta: }}
+\newcommand{\direccion}{\placeholder{Dirección: }}
+\newcommand{\escproc}{\placeholder{Escuela de procedencia: }}
+
+% <?php echo "\n" . "\\renewcommand{\\nombre}{" . LatexTemplate::escape($data['nombre']) . "}\n"; ?>
+% <?php echo "\n" . "\\renewcommand{\\boleta}{" . LatexTemplate::escape($data['boleta']) . "}\n"; ?>
+% <?php echo "\n" . "\\renewcommand{\\direccion}{" . LatexTemplate::escape($data['direccion']) . "}\n"; ?>
+% <?php echo "\n" . "\\renewcommand{\\escproc}{" . LatexTemplate::escape($data['escproc']) . "}\n"; ?>
+\begin{document}
+    \begin{titlepage}
+        \begin{center}
+            \vspace*{-1in}
+            \begin{figure}[htb]
+                \centering
+                \includegraphics[width= 3cm]{./ipn.png}\hspace{9 cm}
+                \includegraphics[width= 2.5cm]{./escom.png}
+            \end{figure}
+        \end{center}
+        \begin{center}
+            \LARGE{INSTITUTO POLITÉCNICO NACIONAL}\\
+            \Large{Escuela Superior de Cómputo}\\
+            \vspace*{5 cm}
+            \nombre{} \\
+            \boleta{} \\
+            \direccion{}\\
+            \escproc{}\\
+        \end{center}
+    \end{titlepage}
+\end{document}
