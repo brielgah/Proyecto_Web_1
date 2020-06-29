@@ -1,13 +1,6 @@
 <?php
 require_once('./LatexTemplate.php');
-// Conexión con la BD, la info del alumno debe ser guardada en data
-/*
 
-try{
-    LatexTemplate::download($data,'template.tex',$data['boleta'] . ".pdf");
-}catch(Exception $e){
-    echo $e -> getMessage();
-}*/
 session_start();
 $boleta=$_SESSION["password"];
 $query1="SELECT * FROM datos WHERE boleta=?";
@@ -46,7 +39,10 @@ $data = array(
 		'nombre' => $nombreCompleto,
 		'boleta' => $boleta,
 		'direccion' => $direccionCompleta,
-		'escproc' => $escuela
+        'escproc' => $escuela,
+        'curp' => $curp,
+        'fechaNacimiento' => $fechaNacimiento,
+        'celular' => $celular
 );
 try {
 	LatexTemplate::download($data, 'genPdf.tex', 'ejemplo.pdf');

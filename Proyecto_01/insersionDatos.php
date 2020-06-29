@@ -43,11 +43,10 @@
 				mysqli_close($conexion);
 				session_start();
 				$_SESSION["boleta"]=$boleta;
-				/*echo "<script>
+				echo "<script>
 					alert('Los datos se han ingresado correctamente');
-					location.href='./fpdf182/genPdf.php';
+					location.href='./genPdf.php';
 					</script>";
-					*/
 			}
 			else
 			{
