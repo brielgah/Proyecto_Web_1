@@ -211,25 +211,7 @@
                                     <div class="row">
                                         <div class="col">
                                             <label for="esc-proc">Escuela de procedencia:</label>
-                                            <select name="esc-proc" id="esc-proc" class="form-control" required value="<?php echo '$escuela'?>">
-                                                <option value="cecyt1">CECyT 1</option>
-                                                <option value="cecyt2">CECyT 2</option>
-                                                <option value="cecyt3">CECyT 3</option>
-                                                <option value="cecyt4">CECyT 4</option>
-                                                <option value="cecyt5">CECyT 5</option>
-                                                <option value="cecyt6">CECyT 6</option>
-                                                <option value="cecyt7">CECyT 7</option>
-                                                <option value="cecyt8">CECyT 8</option>
-                                                <option value="cecyt9">CECyT 9</option>
-                                                <option value="cecyt10">CECyT 10</option>
-                                                <option value="cecyt11">CECyT 11</option>
-                                                <option value="cecyt12">CECyT 12</option>
-                                                <option value="cecyt13">CECyT 13</option>
-                                                <option value="cecyt14">CECyT 14</option>
-                                                <option value="cecyt15">CECyT 15</option>
-                                                <option value="cecyt16">CECyT 16</option>
-                                                <option value="otra">Otra</option>
-                                            </select>
+                                            <input type="text" name="esc-proc" id="esc-proc" class="form-control" required value="<?php echo $escuela?>">
 										</div>
                                     </div>
                                 </div>
