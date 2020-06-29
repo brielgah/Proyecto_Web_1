@@ -30,6 +30,9 @@
             }
         }
 	}
+    session_start();
+    $_SESSION["boleta"]=$boleta;
+    $_SESSION["curp"]=$curp;
 ?>
 <html>
 	<head>
@@ -86,8 +89,8 @@
 					    <div id="invalid_nombre" class="invalid-feedback"><p></p></div>
                                         </div>
                                         <div class="col-md-6">
-                                            <label for="boleta">Número de boleta: </label>
-                                            <input type="text" id="boleta" name="boleta" class="form-control" value="<?php echo $boleta; ?>" required>
+                                            <label for="promedio">Promedio: </label>
+                                            <input type="text" id="promedio" name="promedio" class="form-control" value="<?php echo $promedio; ?>" required>
 					    <div id="invalid_boleta" class="invalid-feedback"><p></p></div>
                                         </div>
                                     </div>
@@ -96,7 +99,7 @@
                                     <div class="col-md-6 mb-3">
                                         <label for="fech-nac">Fecha de nacimiento: <svg class="bi bi-calendar" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                             <path fill-rule="evenodd" d="M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1zm1-3a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H2z"/>
-                                            <path fill-rule="evenodd" d="M3.5 0a.5.5 0 0 1 .5.5V1a.5.5 0 0 1-1 0V.5a.5.5 0 0 1 .5-.5zm9 0a.5.5 0 0 1 .5.5V1a.5.5 0 0 1-1 0V.5a.5.5 0 0 1 .5-.5z"/>
+                                            <path fill-rule ="evenodd" d="M3.5 0a.5.5 0 0 1 .5.5V1a.5.5 0 0 1-1 0V.5a.5.5 0 0 1 .5-.5zm9 0a.5.5 0 0 1 .5.5V1a.5.5 0 0 1-1 0V.5a.5.5 0 0 1 .5-.5z"/>
                                         </svg></label>
                                         <input type="date" id="fech-nac" name="fech-nac" class="form-control" value="<?php echo $//terminar ?>">
 					    <div id="invalid_fecha" class="invalid-feedback"><p></p></div>
@@ -233,6 +236,7 @@
                             </div>
 						</fieldset>
 					</div>
+                    <input type="hidden" id="boleta" name="boleta" value="<?php echo "$boleta?"?>">
                     <div class="text-center container">
 						<button type="button" class="btn btn-secondary" id="modificar">Modificar</button>
 						<button type="submit" class="btn btn-secondary" id="save">Guardar y salir</button>
