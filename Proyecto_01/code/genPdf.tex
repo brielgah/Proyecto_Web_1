@@ -13,11 +13,20 @@
 \newcommand{\boleta}{\placeholder{Boleta: }}
 \newcommand{\direccion}{\placeholder{Dirección: }}
 \newcommand{\escproc}{\placeholder{Escuela de procedencia: }}
+\newcommand{\curp}{\placeholder{CURP: }}
+\newcommand{\fechaNacimiento}{\placeholder{Fecha de nacimiento: }}
+\newcommand{\estadoProc}{\placeholder{Estado de procedencia: }}
+\newcommand{\celular}{\placeholder{Celular: }}
 
 % <?php echo "\n" . "\\renewcommand{\\nombre}{" . LatexTemplate::escape($data['nombre']) . "}\n"; ?>
 % <?php echo "\n" . "\\renewcommand{\\boleta}{" . LatexTemplate::escape($data['boleta']) . "}\n"; ?>
 % <?php echo "\n" . "\\renewcommand{\\direccion}{" . LatexTemplate::escape($data['direccion']) . "}\n"; ?>
 % <?php echo "\n" . "\\renewcommand{\\escproc}{" . LatexTemplate::escape($data['escproc']) . "}\n"; ?>
+% <?php echo "\n" . "\\renewcommand{\\curp}{" . LatexTemplate::escape($data['curp']) . "}\n"; ?>
+% <?php echo "\n" . "\\renewcommand{\\fechaNacimiento}{" . LatexTemplate::escape($data['fechaNacimiento']) . "}\n"; ?>
+% <?php echo "\n" . "\\renewcommand{\\estadoProc}{" . LatexTemplate::escape($data['estado']) . "}\n"; ?>
+% <?php echo "\n" . "\\renewcommand{\\celular}{" . LatexTemplate::escape($data['celular']) . "}\n"; ?>
+
 \begin{document}
     \begin{titlepage}
         \begin{center}
@@ -32,10 +41,14 @@
             \LARGE{INSTITUTO POLITÉCNICO NACIONAL}\\
             \Large{Escuela Superior de Cómputo}\\
             \vspace*{5 cm}
-            \nombre{} \\
-            \boleta{} \\
-            \direccion{}\\
-            \escproc{}\\
+            \textbf{Nombre: }\nombre{} \\
+            \textbf{Boleta: }\boleta{} \\
+            \textbf{Dirección: }\direccion{}\\
+            \textbf{Escuela de procedencia: }\escproc{}\\
+            \textbf{CURP: } \curp{} \\
+            \textbf{Fecha de nacimiento: } \fechaNacimiento{} \\
+            \textbf{Estado de procedencia: } \estadoProc{}\\
+            \textbf{Celular: }\celular{}
         \end{center}
     \end{titlepage}
 \end{document}
