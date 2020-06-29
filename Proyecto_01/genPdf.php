@@ -56,7 +56,8 @@ $data = array(
         'escproc' => $escuela,
         'curp' => $curp,
         'fechaNacimiento' => $fechaNacimiento,
-        'celular' => $celular
+        'celular' => $celular,
+        'estado' => $estado
 );
 try {
 	LatexTemplate::download($data, 'genPdf.tex', 'ejemplo.pdf');
