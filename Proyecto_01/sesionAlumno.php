@@ -122,7 +122,7 @@
                             </div>
                         </div>
                         <div class="card-footer bg-transparent border-s text-center">
-                                <button type="submit" id="gen-pdf" class="btn btn-outline-danger">PDF <i class="fa fa-file-pdf-o"></i></button>
+                                <button type="button" onclick="location.href='./genPdf.php'" id="gen-pdf" class="btn btn-outline-danger">PDF <i class="fa fa-file-pdf-o"></i></button>
                                 <button type="button" onclick="location.href='./inicioSesion.html'" id="log-out" class="btn btn-outline-dark">Salir <i class="fa fa-sign-out"></i>                                </button>
                         </div>
                     </div>

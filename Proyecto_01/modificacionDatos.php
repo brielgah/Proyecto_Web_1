@@ -21,11 +21,11 @@
             }
             else
             {
-                mysqli_stmtm_close($conexion);
+                mysqli_stmtm_close($consulta);
                 mysqli_close($conexion);
                 echo "<script>
                     alert('Hubo un error al realizar la consulta');
-                    window.location='./index.html';
+                    location.href='./sesionAdmin.php';
                     </script>"; 
             }
         }

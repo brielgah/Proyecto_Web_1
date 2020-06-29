@@ -27,6 +27,7 @@
 		mysqli_close($conexion);
 		echo "<script>
 				alert('Error al conectarse a la Base de Datos');
+				location.href=./index.html
 				</script>";
 	}
 	else
@@ -40,10 +41,13 @@
 				mysqli_select_db($conexion,"usuarios");
 				mysqli_query($conexion,$query3);
 				mysqli_close($conexion);
-				echo "<script>
+				session_start();
+				$_SESSION["boleta"]=$boleta;
+				/*echo "<script>
 					alert('Los datos se han ingresado correctamente');
-					location.href='./inicioSesion.html';
+					location.href='./fpdf182/genPdf.php';
 					</script>";
+					*/
 			}
 			else
 			{
@@ -53,7 +57,7 @@
 				mysqli_close($conexion);
 				echo "<script>
 					alert('Error en la BD');
-					location.href='./inicioSesion.html';
+					location.href='./index.html';
 					</script>";
 			}
 		}
@@ -62,7 +66,7 @@
 			mysqli_close($conexion);
 			echo "<script>
 				alert('Error en la BD');
-				location.href='./inicioSesion.html';
+				location.href='./index.html';
 				</script>";
 		}
 	}
