@@ -1,8 +1,22 @@
 <?php
 require_once('./LatexTemplate.php');
+// Conexión con la BD, la info del alumno debe ser guardada en data
+/*
 
-session_start();
-$boleta=$_SESSION["password"];
+try{
+    LatexTemplate::download($data,'template.tex',$data['boleta'] . ".pdf");
+}catch(Exception $e){
+    echo $e -> getMessage();
+}*/
+if(isset($_GET["boleta"]))
+{
+    $boleta=$_GET["boleta"];
+}
+else
+{
+    session_start();
+    $boleta=$_SESSION["password"];
+}
 $query1="SELECT * FROM datos WHERE boleta=?";
 $conexion=mysqli_connect("localhost","root","57425595","alumnos");
 if(!$conexion)

@@ -44,8 +44,8 @@
 				session_start();
 				$_SESSION["boleta"]=$boleta;
 				echo "<script>
-					alert('Los datos se han ingresado correctamente');
-					location.href='./genPdf.php';
+					alert('Para descargar tu PDF inicia sesión');
+					location.href='./inicioSesion.html';
 					</script>";
 			}
 			else

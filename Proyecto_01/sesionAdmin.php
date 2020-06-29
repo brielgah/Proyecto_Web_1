@@ -62,7 +62,7 @@
                                 <td> <?php echo "$alumno->ap_paterno"." "."$alumno->ap_materno"." "."$alumno->nombre"; ?> </td>
                                 <td> <a href="./modificacionDatos.php?boleta=<?php echo $alumno->boleta;?>">Modificar </a> </td>
                                 <td> <a href="./eliminacionDatos.php?boleta=<?php echo $alumno->boleta;?>">Eliminar </a> </td>
-                                <td> <a href="./modificacionDatos.php?boleta=<?php echo $alumno->boleta; ?>">Generar </a> </td>
+                                <td> <a href="./genPdf.php?boleta=<?php echo $alumno->boleta; ?>">Generar </a> </td>
                             </tr>
                             <?php
                                 }
