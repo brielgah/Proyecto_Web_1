@@ -38,11 +38,15 @@ else
 					if($id != 0)
 					{	
 						//El usuario es administrador
+						mysqli_stmt_close($consulta);
+						mysqli_close($conexion);
 						header('Location:./sesionAdmin.php');
 					}
 					else
 					{
 						//El usuario es no es administrador
+						mysqli_stmt_close($consulta);
+						mysqli_close($conexion);
 						session_start();
 						$_SESSION["username"]=$usuario;
 						$_SESSION["password"]=$passwd;
@@ -52,32 +56,32 @@ else
 				else
 				{
 					//No existe el usuario, regresa a pagina de inicio sesion
-					mysqli_stmt_close($conexion);
+					mysqli_stmt_close($consulta);
 					mysqli_close($conexion);
 					echo "<script>
 						alert('No existe el usuario o los datos ingresados son incorrectos');
-						window.location='./inicioSesion.html';
+						location.href='./inicioSesion.html';
 						</script>";				
 				}
 			}
 			else
 			{
-				mysqli_stmt_close($conexion);
+				mysqli_stmt_close($consulta);
 				mysqli_close($conexion);
 				echo "<script>
 					alert('Hubo un error al realizar la consulta');
-					window.location='./index.html';
+					location.href='./inicioSesion.html';
 					</script>";	
 			}
 		}
 		else
 		{
 			//Hubo un error
-			mysqli_stmt_close($conexion);
+			mysqli_stmt_close($consulta);
 			mysqli_close($conexion);
 			echo "<script>
 				alert('Hubo un error al realizar la consulta');
-				window.location='./index.html';
+				location.href='./inicioSesion.html';
 				</script>";				
 		}
 	}
