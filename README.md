@@ -5,6 +5,7 @@ Para el correcto funcionamiento se recomienda:
 * MySQL 4.1 o superior
 * SAFE_MODE desactivado en PHP
 * Tener Xelatex instalado en el servidor
+
 Fuente del script para la generación del PDF [aquí](https://github.com/mike42/web-pdf/blob/master/LatexTemplate.php)
 # Colaboradores
  |Nombre|Usuario|
