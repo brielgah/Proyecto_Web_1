@@ -101,7 +101,7 @@
                                             <path fill-rule="evenodd" d="M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1zm1-3a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H2z"/>
                                             <path fill-rule ="evenodd" d="M3.5 0a.5.5 0 0 1 .5.5V1a.5.5 0 0 1-1 0V.5a.5.5 0 0 1 .5-.5zm9 0a.5.5 0 0 1 .5.5V1a.5.5 0 0 1-1 0V.5a.5.5 0 0 1 .5-.5z"/>
                                         </svg></label>
-                                        <input type="date" id="fech-nac" name="fech-nac" class="form-control" value="<?php echo $//terminar ?>">
+                                        <input type="date" id="fech-nac" name="fech-nac" class="form-control" value="<?php echo $fechaNacimiento ?>">
 					    <div id="invalid_fecha" class="invalid-feedback"><p></p></div>
                                     </div>
                                     <div class="col-md-3 mb-3">
@@ -111,7 +111,7 @@
                                     </div>
                                     <div class="col-md-3 mb-3">
                                         <label for="entidad">Entidad de nacimiento:</label>
-                                        <select name="entidad" class="form-control" id="entidad" required value="<?php echo $//Terminar ?>">
+                                        <select name="entidad" class="form-control" id="entidad" required value="<?php echo '$estado' ?>">
                                             <option value="Aguascalientes">Aguascalientes</option>
                                             <option value="Baja California">Baja California</option>
                                             <option value="Baja California Sur">Baja California Sur</option>
@@ -211,7 +211,7 @@
                                     <div class="row">
                                         <div class="col">
                                             <label for="esc-proc">Escuela de procedencia:</label>
-                                            <select name="esc-proc" id="esc-proc" class="form-control" required value="<?php echo $//Terminar ?>">
+                                            <select name="esc-proc" id="esc-proc" class="form-control" required value="<?php echo '$escuela'?>">
                                                 <option value="cecyt1">CECyT 1</option>
                                                 <option value="cecyt2">CECyT 2</option>
                                                 <option value="cecyt3">CECyT 3</option>
